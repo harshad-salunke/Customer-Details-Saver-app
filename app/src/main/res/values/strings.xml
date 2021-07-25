@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Om Sai</string>
+    <string name="flowting_button">floating_button</string>
+    <string name="customer">Customer Name</string>
+    <string name="customer_description">description</string>
+    <string name="date">Date </string>
+    <string name="mobile_no">Mobile     </string>
+    <string name="price">Payment</string>
+    <string name="action_save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="delete_all_data">Delete All Data</string>
+    <string name="name">Name</string>
+</resources>
