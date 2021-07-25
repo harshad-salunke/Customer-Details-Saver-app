@@ -15,10 +15,8 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.omsai.data.CustomerContract;
 import com.example.omsai.data.CustomerhelperDb;
 import com.example.omsai.data.CustomerContract.Table;
-import com.google.android.material.tabs.TabLayout;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -41,7 +39,7 @@ public class Add_Customer extends AppCompatActivity {
         mobile=findViewById(R.id.c_number);
         date=findViewById(R.id.c_date);
         date.setText(getDATE());
-        payment=findViewById(R.id.pay);
+        payment=findViewById(R.id.c_pay);
 
         Intent intent=getIntent();
         Uri currenturi=intent.getData();
@@ -50,6 +48,7 @@ public class Add_Customer extends AppCompatActivity {
 
         }
         else {
+
 
             setTitle("Edit Person");
             person_edit=true;
@@ -82,7 +81,7 @@ public class Add_Customer extends AppCompatActivity {
     }
 
     private String getDATE() {
-        SimpleDateFormat formatter=new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat formatter=new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         Date date=new Date();
         String result=formatter.format(date);
         return result;
@@ -112,9 +111,9 @@ public class Add_Customer extends AppCompatActivity {
             }
             else {
                 int n=getContentResolver().delete(person_delete,null,null);
-                if(cheek){
+                Toast.makeText(this, "Deleted", Toast.LENGTH_SHORT).show();
                     finish();
-                }
+
 
             }
 

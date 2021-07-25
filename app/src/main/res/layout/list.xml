@@ -6,29 +6,68 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#BCBFBB"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/name"
+            android:id="@+id/cu_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:shadowColor="#DD4343"
-            android:text="TextView"
-            android:textColor="@color/black"
-            android:textStyle="bold|italic" />
+            android:text="12/12/12"
+            android:textSize="10sp"
+            android:textStyle="italic" />
 
-        <TextView
-            android:id="@+id/des"
-            style="@style/Widget.AppCompat.TextView"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/cu_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="harshad slaunke"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/cu_mb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="9890931091"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/cu_pay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="300"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=".Rs"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </LinearLayout>
+
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

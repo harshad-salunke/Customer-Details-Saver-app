@@ -23,10 +23,14 @@ public class CusstomAdappter  extends CursorAdapter {
 
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
-        TextView name=view.findViewById(R.id.name);
+        TextView name=view.findViewById(R.id.cu_name);
         name.setText(cursor.getString(cursor.getColumnIndex(CustomerContract.Table.NAME)));
-        TextView dec=view.findViewById(R.id.des);
-        dec.setText(cursor.getString(cursor.getColumnIndex(CustomerContract.Table.DESCRIP)));
+        TextView payment=view.findViewById(R.id.cu_pay);
+        payment.setText(cursor.getLong(cursor.getColumnIndex(CustomerContract.Table.PAYMENTs))+"");
+        TextView date=view.findViewById(R.id.cu_date);
+        date.setText(cursor.getString(cursor.getColumnIndex(CustomerContract.Table.DATE)));
+        TextView mobile=view.findViewById(R.id.cu_mb);
+        mobile.setText(cursor.getString(cursor.getColumnIndex(CustomerContract.Table.Mobile)));
 
     }
 }
