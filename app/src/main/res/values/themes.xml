@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.OmSai" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#DD091A</item>
-        <item name="colorPrimaryVariant">#F80318</item>
+        <item name="colorPrimary">#F15602</item>
+        <item name="colorPrimaryVariant">#F45C2E</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>

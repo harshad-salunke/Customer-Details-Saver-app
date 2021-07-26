@@ -19,7 +19,7 @@ public static final String CONTENT_AUTHORITY="com.example.android.omsai";
         public final static String NAME="name";
         public final static String DATE="date";
         public final static String Mobile="date2";
-
+        public final static String Total="Total";
         public final static String DESCRIP="discription";
         public final static String PAYMENTs="payments";
 

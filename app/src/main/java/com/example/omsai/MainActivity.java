@@ -13,11 +13,14 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
+
 import com.example.omsai.data.CustomerContract.Table;
 import com.example.omsai.data.CustomerContract;
 import com.example.omsai.data.CustomerhelperDb;
@@ -28,15 +31,26 @@ public class MainActivity extends AppCompatActivity {
     CustomerhelperDb mDbhelper;
     ListView listView=null;
     int count=3;
+    TextView toatal_sum;
+    Uri uri;
     ImageView imageView;
+    VideoView videoView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Intent intent=new Intent(this,intro.class);
+        startActivity(intent);
+
         setContentView(R.layout.activity_main);
+        toatal_sum=findViewById(R.id.sum_total);
+
         fb = findViewById(R.id.floatbutton);
         listView = findViewById(R.id.list_view);
         mDbhelper = new CustomerhelperDb(this);
+
         imageView=findViewById(R.id.empty_image);
+
+
         fb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,6 +91,13 @@ public class MainActivity extends AppCompatActivity {
             imageView.setVisibility(View.VISIBLE);
         }
         Log.d("check_list","this is the empty "+n);
+        int sum=0;
+        while (cursor.moveToNext()){
+            int total=cursor.getInt(cursor.getColumnIndex(Table.PAYMENTs));
+            sum=sum+total;
+        }
+        toatal_sum.setText(sum+"");
+        Log.d("salunke",sum+"");
         CusstomAdappter adappter = new CusstomAdappter(this, cursor);
         listView.setAdapter(adappter);
 

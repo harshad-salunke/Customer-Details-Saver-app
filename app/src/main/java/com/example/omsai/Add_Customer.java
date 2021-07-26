@@ -1,6 +1,7 @@
 package com.example.omsai;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
@@ -29,6 +30,12 @@ public class Add_Customer extends AppCompatActivity {
     Boolean person_edit=true;
     Uri person_delete=null;
     Boolean cheek=false;
+
+
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +47,7 @@ public class Add_Customer extends AppCompatActivity {
         date=findViewById(R.id.c_date);
         date.setText(getDATE());
         payment=findViewById(R.id.c_pay);
+
 
         Intent intent=getIntent();
         Uri currenturi=intent.getData();
@@ -92,9 +100,18 @@ public class Add_Customer extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.editing,menu);
         return true;
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show();
+    }
+
     @Override
     protected void onStart() {
         super.onStart();
+
+
     }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -135,9 +152,15 @@ if(!pay.isEmpty()){
     put_pay=Long.parseLong(pay);
 }
 
-if(put_pay==null || put_name.isEmpty()){
+if(put_pay==null || put_name.isEmpty() || put_name.length()>=19){
     cheek=false;
-    Toast.makeText(this, "Name and Payment Compulsory", Toast.LENGTH_SHORT).show();
+    if(put_name.length()>=19){
+        Toast.makeText(this, "Name is to Longer", Toast.LENGTH_SHORT).show();
+    }
+    else {
+        Toast.makeText(this, "Name and Payment Compulsory", Toast.LENGTH_SHORT).show();
+
+    }
 }
 
 else {

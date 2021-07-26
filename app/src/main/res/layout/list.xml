@@ -55,7 +55,7 @@
                 android:layout_weight="1"
                 android:gravity="end"
                 android:text="0"
-                android:textColor="@color/black"
+                android:textColor="#E10505"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
