@@ -14,7 +14,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.example.omsai.data.CustomerContract.Table;
 import com.example.omsai.data.CustomerContract;
@@ -24,8 +26,9 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class MainActivity extends AppCompatActivity {
     FloatingActionButton fb;
     CustomerhelperDb mDbhelper;
-    ListView listView;
+    ListView listView=null;
     int count=3;
+    ImageView imageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         fb = findViewById(R.id.floatbutton);
         listView = findViewById(R.id.list_view);
         mDbhelper = new CustomerhelperDb(this);
+        imageView=findViewById(R.id.empty_image);
         fb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
     }
 
@@ -64,6 +69,14 @@ public class MainActivity extends AppCompatActivity {
 
         };
         Cursor cursor = getContentResolver().query(Table.CONTENT_URI, projection, null, null, null);
+        int n=cursor.getCount();
+        if(n!=0){
+            imageView.setVisibility(View.GONE);
+        }
+        if(n==0){
+            imageView.setVisibility(View.VISIBLE);
+        }
+        Log.d("check_list","this is the empty "+n);
         CusstomAdappter adappter = new CusstomAdappter(this, cursor);
         listView.setAdapter(adappter);
 

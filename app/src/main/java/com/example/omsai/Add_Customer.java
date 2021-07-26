@@ -92,7 +92,10 @@ public class Add_Customer extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.editing,menu);
         return true;
     }
-
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int select=item.getItemId();

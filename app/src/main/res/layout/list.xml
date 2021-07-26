@@ -35,9 +35,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="harshad slaunke"
+                android:text="Empty"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -45,7 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="9890931091"
+                android:text="0000000000"
                 android:textColor="@color/black" />
 
             <TextView
@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="end"
-                android:text="300"
+                android:text="0"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />

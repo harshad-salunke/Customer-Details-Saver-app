@@ -9,7 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#A5A09F"
+        android:background="#F6F5F5"
         android:orientation="vertical"
         android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:context=".Add_Customer">
 
-    <!-- Overview category -->
+        <!-- Overview category -->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,7 +28,9 @@
             <!-- Label -->
             <TextView
                 style="@style/CategoryStyle"
-                android:text="Name" />
+                android:text="Name"
+                android:textColor="#FA0505"
+                android:textSize="16sp" />
 
             <!-- Input fields -->
             <LinearLayout
@@ -63,7 +65,9 @@
             <!-- Label -->
             <TextView
                 style="@style/CategoryStyle"
-                android:text="Mobile" />
+                android:text="Mobile"
+                android:textColor="#FD0303"
+                android:textSize="16sp" />
 
             <!-- Input fields -->
             <LinearLayout
@@ -78,7 +82,7 @@
                     android:id="@+id/c_number"
                     style="@style/EditorFieldStyle"
                     android:hint="No"
-                    android:inputType="textCapWords" />
+                    android:inputType="number" />
 
             </LinearLayout>
         </LinearLayout>
@@ -91,7 +95,9 @@
             <!-- Label -->
             <TextView
                 style="@style/CategoryStyle"
-                android:text="Date" />
+                android:text="Date"
+                android:textColor="#FF0303"
+                android:textSize="16sp" />
 
             <!-- Input fields -->
             <LinearLayout
@@ -120,7 +126,9 @@
             <!-- Label -->
             <TextView
                 style="@style/CategoryStyle"
-                android:text="Payment" />
+                android:text="Payment"
+                android:textColor="#FB0404"
+                android:textSize="16sp" />
 
             <!-- Input fields -->
             <RelativeLayout
