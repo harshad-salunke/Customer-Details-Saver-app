@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     Uri uri;
     ImageView imageView;
     VideoView videoView;
+    boolean check=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,10 +64,55 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onBackPressed() {
+        if(check){
+            super.onBackPressed();
+
+        }
+        Toast.makeText(this, "Sorray cant go back", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
     protected void onStart() {
         Log.d("harshad ", "on start");
         super.onStart();
         Display();
+    }
+
+    @Override
+    protected void onPause() {
+        onStart();
+        if(check){
+            super.onPause();
+
+
+        }
+        Toast.makeText(this, "pause", Toast.LENGTH_SHORT).show();
+
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        onStart();
+        if(check){
+            super.onDestroy();
+
+        }
+        Toast.makeText(this, "Destroy", Toast.LENGTH_SHORT).show();
+
+    }
+
+    @Override
+    protected void onStop() {
+        onStart();
+        if(check){
+            super.onStop();
+
+        }
+        Toast.makeText(this, "stop", Toast.LENGTH_SHORT).show();
+
+
     }
 
     public final void Display() {
